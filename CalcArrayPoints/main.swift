@@ -41,6 +41,7 @@ func multiply(intArray: [Int]) -> Int {
 }
 
 func count(intArray: [Int]) -> Int {
+    //had trouble getting this reduce to work
     return intArray.count
 }
 
@@ -78,9 +79,19 @@ func subtract(firstTuple: (Int, Int), secondTuple: (Int, Int)) -> (Int, Int) {
     return finalTuple
 }
 
-func add(point1: [String : Int], point2: [String : Int]) -> (Int, Int) {
-    return (Int(point1["x"]! + point2["x"]!), Int(point1["y"]! + point2["y"]!))
+func add(point1: [String : Int], point2: [String : Int]) -> Dictionary<String, Int> {
+    var finalDictionary : Dictionary<String, Int> = [:]
+    
+    finalDictionary["x"] = Int(point1["x"]! + point2["x"]!)
+    finalDictionary["y"] = Int(point1["y"]! + point2["y"]!)
+    return finalDictionary
 }
+
+// Accepts dictionary parameters and returns as a opint
+//func add(point1: [String : Int], point2: [String : Int]) -> (Int, Int) {
+//    return (Int(point1["x"]! + point2["x"]!), Int(point1["y"]! + point2["y"]!))
+//}
+
 
 // Stop if "x" or "y" is not the keys
 //    func add(point1: [String : Int], point2: [String : Int]) -> (Int, Int) {
@@ -92,10 +103,18 @@ func add(point1: [String : Int], point2: [String : Int]) -> (Int, Int) {
 //        }
 
     
-func subtract(point1: [String : Int], point2: [String : Int]) -> (Int, Int) {
-    return (Int(point1["x"]! - point2["x"]!), Int(point1["y"]! - point2["y"]!))
+func subtract(point1: [String : Int], point2: [String : Int]) -> Dictionary<String, Int> {
+    var finalDictionary : Dictionary<String, Int> = [:]
+    
+    finalDictionary["x"] = Int(point1["x"]! - point2["x"]!)
+    finalDictionary["y"] = Int(point1["y"]! - point2["y"]!)
+    return finalDictionary
 }
 
+// Accepts dictionary parameters and returns as a opint
+//func subtract(point1: [String : Int], point2: [String : Int]) -> (Int, Int) {
+//    return (Int(point1["x"]! - point2["x"]!), Int(point1["y"]! - point2["y"]!))
+//}
 
 // Stop if doubles are passed in
 //    func add(point1: [String : Double], point2: [String : Double]) -> (Double, Double) {
